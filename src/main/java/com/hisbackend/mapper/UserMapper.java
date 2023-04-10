@@ -16,4 +16,16 @@ public class UserMapper {
         );
         return user;
     }
+
+    public UserDto mapToDto(User user) {
+        final UserDto userDto = new UserDto(
+                user.getId(),
+                user.getUsername(),
+                user.getPassword(),
+                user.getName(),
+                user.getSurname(),
+                user.isSignedIn()
+        );
+        return userDto;
+    }
 }

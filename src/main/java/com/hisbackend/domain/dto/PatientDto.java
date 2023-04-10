@@ -7,12 +7,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserDto {
+public class PatientDto {
     private long id;
-    private String username;
-    private String password;
-    private String name;
+    private String firstname;
     private String surname;
-    private boolean signedIn;
+    private String pesel;
 
 }

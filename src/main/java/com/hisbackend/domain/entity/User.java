@@ -5,6 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "User.signIn",
+                query = "UPDATE USERS SET SIGNED_IN = 'TRUE' WHERE ID = :ID",
+                resultClass = User.class
+        ),
+
+        @NamedNativeQuery(
+                name = "User.signOut",
+                query = "UPDATE USERS SET SIGNED_IN = 'FALSE' WHERE ID = :ID",
+                resultClass = User.class
+        ),
+
+})
+
 @Data
 @AllArgsConstructor
 @Entity
@@ -30,4 +45,14 @@ public class User {
         this.surname = surname;
         this.signedIn = false;
     }
+
+    public boolean isSignedIn() {
+        return signedIn;
+    }
+
+    public void setSignedIn(boolean signedIn) {
+        this.signedIn = signedIn;
+    }
 }
+
+
