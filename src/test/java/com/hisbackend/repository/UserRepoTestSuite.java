@@ -10,13 +10,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class UserRepoTestSuite {
 
     @Autowired
-    private UserDao userDao;
+    private UserRepository userRepository;
     @Test
     public void testUserDao(){
         //Given
         User user = new User("GreedFire", "1234", "Dawid", "Majchrzak");
         //When
-        userDao.save(user);
+        userRepository.save(user);
         String name = user.getName();
         //Then
         Assertions.assertEquals("Dawid", name );
