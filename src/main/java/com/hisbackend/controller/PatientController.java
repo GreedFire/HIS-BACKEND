@@ -28,11 +28,14 @@ public class PatientController {
     public boolean registerPatient(@RequestBody PatientDto patientDto){
         Patient patient = patientMapper.mapToEntity(patientDto);
 
+        Patient patient2 = null;
+
         if(patient != null) {
             patientRepository.save(patient);
             return true;
         }
         else return false;
+
 
     }
 
