@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class StartupInitializer implements CommandLineRunner {
 
@@ -22,9 +24,9 @@ public class StartupInitializer implements CommandLineRunner {
         User user = new User("ADMIN","ADMIN","ADMIN","ADMIN");
         userRepository.save(user);
 
-        Patient patient = new Patient("Dawid", "Majchrzak", "00000000000");
-        Patient patient2 = new Patient("Anna", "Nowacka", "11111111111");
-        Patient patient3 = new Patient("Paweł", "Kowalski", "22222222222");
+        Patient patient = new Patient("Dawid", "Majchrzak", "00000000000", "Mężczyzna", "zarejestrowany", LocalDateTime.of(2023,5,1,10,00));
+        Patient patient2 = new Patient("Anna", "Nowacka", "11111111111", "Kobieta","zarejestrowany", LocalDateTime.of(2023,5,1,10,00));
+        Patient patient3 = new Patient("Paweł", "Kowalski", "22222222222", "Mężczyzna","zarejestrowany", LocalDateTime.of(2023,5,1,10,00));
         patientRepository.save(patient);
         patientRepository.save(patient2);
         patientRepository.save(patient3);

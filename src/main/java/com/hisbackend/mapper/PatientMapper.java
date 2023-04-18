@@ -15,7 +15,10 @@ public class PatientMapper {
         final Patient patient = new Patient(
                 patientDto.getFirstname(),
                 patientDto.getSurname(),
-                patientDto.getPesel()
+                patientDto.getPesel(),
+                patientDto.getSex(),
+                patientDto.getStatus(),
+                patientDto.getRegistrationDate()
         );
         return patient;
     }
@@ -25,7 +28,11 @@ public class PatientMapper {
                 patient.getId(),
                 patient.getFirstname(),
                 patient.getSurname(),
-                patient.getPesel()
+                patient.getPesel(),
+                patient.getSex(),
+                patient.getStatus(),
+                patient.getRegistrationDate(),
+                patient.getRegisteredOnDate()
         );
         return patientDto;
     }

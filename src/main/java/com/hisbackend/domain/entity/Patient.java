@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @NamedNativeQueries({
         @NamedNativeQuery(
                 name = "Patient.listPatients",
@@ -24,14 +27,24 @@ public class Patient {
     private String firstname;
     private String surname;
     private String pesel;
+    private String sex;
+    private String status;
+    private LocalDateTime registrationDate;
+    private LocalDateTime registeredOnDate;
 
     public Patient(){
 
     }
 
-    public Patient(String firstname, String surname, String pesel) {
+    public Patient(String firstname, String surname, String pesel, String sex, String status, LocalDateTime registeredOnDate) {
         this.firstname = firstname;
         this.surname = surname;
         this.pesel = pesel;
+        this.sex = sex;
+        this.status = status;
+        this.registrationDate = LocalDateTime.now();
+        this.registeredOnDate = registeredOnDate;
     }
+
+
 }
