@@ -24,9 +24,9 @@ public class StartupInitializer implements CommandLineRunner {
         User user = new User("admin","admin","Administrator","");
         userRepository.save(user);
 
-        Patient patient = new Patient("Dawid", "Majchrzak", "00000000000", "Male", "registered", LocalDateTime.of(2023,5,1,10,00));
-        Patient patient2 = new Patient("Anna", "Nowacka", "11111111111", "Female","registered", LocalDateTime.of(2023,5,1,10,00));
-        Patient patient3 = new Patient("Paweł", "Kowalski", "22222222222", "Male","registered", LocalDateTime.of(2023,5,1,10,00));
+        Patient patient = new Patient("Dawid", "Majchrzak", "00000000000", "Male", "registered", LocalDateTime.of(2023,5,1,10,1));
+        Patient patient2 = new Patient("Anna", "Nowacka", "11111111111", "Female","registered", LocalDateTime.of(2023,5,1,10,1));
+        Patient patient3 = new Patient("Paweł", "Kowalski", "22222222222", "Male","registered", LocalDateTime.of(2022,6,1,10,1));
         patientRepository.save(patient);
         patientRepository.save(patient2);
         patientRepository.save(patient3);
