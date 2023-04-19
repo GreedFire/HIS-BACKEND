@@ -21,7 +21,7 @@ public class StartupInitializer implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
-        User user = new User("ADMIN","ADMIN","ADMIN","ADMIN");
+        User user = new User("admin","admin","Administrator","");
         userRepository.save(user);
 
         Patient patient = new Patient("Dawid", "Majchrzak", "00000000000", "Mężczyzna", "zarejestrowany", LocalDateTime.of(2023,5,1,10,00));

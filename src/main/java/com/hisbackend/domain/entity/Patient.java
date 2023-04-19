@@ -3,9 +3,7 @@ package com.hisbackend.domain.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NamedNativeQueries({
@@ -30,20 +28,20 @@ public class Patient {
     private String sex;
     private String status;
     private LocalDateTime registrationDate;
-    private LocalDateTime registeredOnDate;
+    private LocalDateTime scheduledDate;
 
     public Patient(){
 
     }
 
-    public Patient(String firstname, String surname, String pesel, String sex, String status, LocalDateTime registeredOnDate) {
+    public Patient( String firstname, String surname, String pesel, String sex, String status, LocalDateTime scheduledDate) {
         this.firstname = firstname;
         this.surname = surname;
         this.pesel = pesel;
         this.sex = sex;
         this.status = status;
         this.registrationDate = LocalDateTime.now();
-        this.registeredOnDate = registeredOnDate;
+        this.scheduledDate = scheduledDate;
     }
 
 

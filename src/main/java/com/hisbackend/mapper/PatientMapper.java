@@ -1,9 +1,7 @@
 package com.hisbackend.mapper;
 
 import com.hisbackend.domain.dto.PatientDto;
-import com.hisbackend.domain.dto.UserDto;
 import com.hisbackend.domain.entity.Patient;
-import com.hisbackend.domain.entity.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,8 +16,8 @@ public class PatientMapper {
                 patientDto.getPesel(),
                 patientDto.getSex(),
                 patientDto.getStatus(),
-                patientDto.getRegistrationDate()
-        );
+                patientDto.getScheduledDate()
+                );
         return patient;
     }
 
@@ -32,7 +30,7 @@ public class PatientMapper {
                 patient.getSex(),
                 patient.getStatus(),
                 patient.getRegistrationDate(),
-                patient.getRegisteredOnDate()
+                patient.getScheduledDate()
         );
         return patientDto;
     }
@@ -43,7 +41,11 @@ public class PatientMapper {
                         patient.getId(),
                         patient.getFirstname(),
                         patient.getSurname(),
-                        patient.getPesel()
+                        patient.getPesel(),
+                        patient.getSex(),
+                        patient.getStatus(),
+                        patient.getRegistrationDate(),
+                        patient.getScheduledDate()
                 ))
                 .collect(Collectors.toList());
     }
