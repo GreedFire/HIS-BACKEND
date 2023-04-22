@@ -27,4 +27,14 @@ public class PatientController {
     public List<PatientDto> getPatients() {
          return patientService.getPatients();
     }
+
+    @DeleteMapping("/deletePatient")
+    public void deletePatient(@RequestParam long patientId){
+        patientService.deletePatient(patientId);
+    }
+
+    @PutMapping(path = "/updatePatient", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public void updatePatient(@RequestBody PatientDto patientDto){
+        patientService.updatePatient(patientDto);
+    }
 }

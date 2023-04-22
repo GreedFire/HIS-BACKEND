@@ -34,7 +34,18 @@ public class Patient {
 
     }
 
-    public Patient( String firstname, String surname, String pesel, String sex, String status, LocalDateTime scheduledDate) {
+    public Patient(long id, String firstname, String surname, String pesel, String sex, String status, LocalDateTime scheduledDate) {
+        this.id = id;
+        this.firstname = firstname;
+        this.surname = surname;
+        this.pesel = pesel;
+        this.sex = sex;
+        this.status = status;
+        this.registrationDate = LocalDateTime.now();
+        this.scheduledDate = scheduledDate;
+    }
+
+    public Patient(String firstname, String surname, String pesel, String sex, String status, LocalDateTime scheduledDate) {
         this.firstname = firstname;
         this.surname = surname;
         this.pesel = pesel;
