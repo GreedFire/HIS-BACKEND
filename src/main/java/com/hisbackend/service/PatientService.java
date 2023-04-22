@@ -33,4 +33,22 @@ public class PatientService {
     public List<PatientDto> getPatients() {
         return patientMapper.mapToDtoList(patientRepository.findAll());
     }
+
+    public void deletePatient(long patientId){
+        patientRepository.deleteById(patientId);
+    }
+
+    public void updatePatient(PatientDto patientDto){
+        Patient patient = patientMapper.mapToEntity(patientDto);
+        patientRepository.updateById(
+                patient.getFirstname(),
+                patient.getSurname(),
+                patient.getPesel(),
+                patient.getSex(),
+                patient.getScheduledDate(),
+                patient.getId()
+        );
+    }
+
+
 }

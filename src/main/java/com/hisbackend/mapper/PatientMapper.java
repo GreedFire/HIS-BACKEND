@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class PatientMapper {
     public Patient mapToEntity(PatientDto patientDto) {
         return new Patient(
+                patientDto.getId(),
                 patientDto.getFirstname(),
                 patientDto.getSurname(),
                 patientDto.getPesel(),

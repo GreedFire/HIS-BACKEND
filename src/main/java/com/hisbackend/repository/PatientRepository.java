@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,5 +20,10 @@ public interface PatientRepository extends CrudRepository<Patient, Long> {
 
     @Override
     List<Patient> findAll();
+
+    @Modifying
+    @Query("update Patient e set e.firstname = ?1, e.surname = ?2, e.pesel = ?3, e.sex = ?4," +
+            " e.scheduledDate = ?5 where e.id = ?6")
+    void updateById(String firstname, String surname, String pesel, String sex, LocalDateTime scheduleDate, long id);
 
 }
