@@ -1,5 +1,6 @@
 package com.hisbackend.service;
 
+import com.hisbackend.domain.dto.PatientDto;
 import com.hisbackend.domain.dto.UserDto;
 import com.hisbackend.domain.entity.User;
 import com.hisbackend.mapper.UserMapper;
@@ -7,6 +8,7 @@ import com.hisbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,5 +40,9 @@ public class UserService {
             userDto = userMapper.mapToDto(user.get());
 
         return userDto;
+    }
+
+    public List<UserDto> getUsers() {
+        return userMapper.mapToDtoList(userRepository.findAll());
     }
 }

@@ -1,9 +1,12 @@
 package com.hisbackend.controller;
 
+import com.hisbackend.domain.dto.PatientDto;
 import com.hisbackend.domain.dto.UserDto;
 import com.hisbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("his/users")
@@ -28,5 +31,10 @@ public class UserController {
     @GetMapping("/getUser")
     public UserDto getUser(@RequestParam long id) {
         return userService.getUser(id);
+    }
+
+    @GetMapping("/getUsers")
+    public List<UserDto> getPatients() {
+        return userService.getUsers();
     }
 }

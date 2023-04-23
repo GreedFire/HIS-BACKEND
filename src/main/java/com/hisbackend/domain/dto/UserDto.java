@@ -15,4 +15,11 @@ public class UserDto {
     private String surname;
     private boolean signedIn;
 
+    public UserDto(long id, String username, String name, String surname, boolean signedIn) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+        this.signedIn = signedIn;
+    }
 }
