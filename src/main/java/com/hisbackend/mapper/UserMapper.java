@@ -13,10 +13,12 @@ import java.util.stream.Collectors;
 public class UserMapper {
     public User mapToEntity(UserDto userDto) {
         return new User(
+                userDto.getId(),
                 userDto.getUsername(),
                 userDto.getPassword(),
                 userDto.getName(),
-                userDto.getSurname()
+                userDto.getSurname(),
+                userDto.isSignedIn()
         );
     }
 

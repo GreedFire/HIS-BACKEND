@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @RestController
 @RequestMapping("his/users")
 public class UserController {
@@ -34,7 +36,21 @@ public class UserController {
     }
 
     @GetMapping("/getUsers")
-    public List<UserDto> getPatients() {
+    public List<UserDto> getUsers() {
         return userService.getUsers();
+    }
+
+    @PostMapping(path = "/create", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public boolean createUser(@RequestBody UserDto userDto){
+        return userService.createUser(userDto);
+    }
+    @DeleteMapping("/deleteUser")
+    public void deleteUser(@RequestParam long userId){
+        userService.deleteUser(userId);
+    }
+
+    @PutMapping(path = "/updateUser", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public void updatePatient(@RequestBody UserDto userDto){
+        userService.updateUser(userDto);
     }
 }
