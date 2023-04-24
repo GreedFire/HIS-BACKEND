@@ -1,8 +1,6 @@
 package com.hisbackend.service;
 
-import com.hisbackend.domain.dto.PatientDto;
 import com.hisbackend.domain.dto.UserDto;
-import com.hisbackend.domain.entity.Patient;
 import com.hisbackend.domain.entity.User;
 import com.hisbackend.mapper.UserMapper;
 import com.hisbackend.repository.UserRepository;
@@ -53,6 +51,14 @@ public class UserService {
                 user.getUsername(),
                 user.getName(),
                 user.getSurname(),
+                user.getId()
+        );
+    }
+
+    public void updateUserPassword(UserDto userDto){
+        User user = userMapper.mapToEntity(userDto);
+        userRepository.updatePasswordById(
+                user.getPassword(),
                 user.getId()
         );
     }

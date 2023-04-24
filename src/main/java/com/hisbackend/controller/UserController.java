@@ -1,6 +1,5 @@
 package com.hisbackend.controller;
 
-import com.hisbackend.domain.dto.PatientDto;
 import com.hisbackend.domain.dto.UserDto;
 import com.hisbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +49,12 @@ public class UserController {
     }
 
     @PutMapping(path = "/updateUser", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public void updatePatient(@RequestBody UserDto userDto){
+    public void updateUser(@RequestBody UserDto userDto){
         userService.updateUser(userDto);
+    }
+
+    @PutMapping(path = "/updateUserPassword", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public void updateUserPassword(@RequestBody UserDto userDto){
+        userService.updateUserPassword(userDto);
     }
 }

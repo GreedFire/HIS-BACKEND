@@ -1,7 +1,6 @@
 package com.hisbackend.controller;
 
 import com.hisbackend.domain.dto.PatientDto;
-import com.hisbackend.domain.dto.UserDto;
 import com.hisbackend.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
