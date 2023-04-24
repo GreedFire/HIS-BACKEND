@@ -1,9 +1,14 @@
 package com.hisbackend.controller;
 
+import com.hisbackend.domain.dto.PatientDto;
 import com.hisbackend.domain.dto.UserDto;
 import com.hisbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping("his/users")
@@ -28,5 +33,24 @@ public class UserController {
     @GetMapping("/getUser")
     public UserDto getUser(@RequestParam long id) {
         return userService.getUser(id);
+    }
+
+    @GetMapping("/getUsers")
+    public List<UserDto> getUsers() {
+        return userService.getUsers();
+    }
+
+    @PostMapping(path = "/create", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public boolean createUser(@RequestBody UserDto userDto){
+        return userService.createUser(userDto);
+    }
+    @DeleteMapping("/deleteUser")
+    public void deleteUser(@RequestParam long userId){
+        userService.deleteUser(userId);
+    }
+
+    @PutMapping(path = "/updateUser", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public void updatePatient(@RequestBody UserDto userDto){
+        userService.updateUser(userDto);
     }
 }

@@ -46,6 +46,14 @@ public class User {
         this.signedIn = false;
     }
 
+    public User(long id, String username, String name, String surname, boolean signedIn) {
+        this.id = id;
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+        this.signedIn = signedIn;
+    }
+
     public boolean isSignedIn() {
         return signedIn;
     }
