@@ -1,8 +1,6 @@
 package com.hisbackend.mapper;
 
-import com.hisbackend.domain.dto.PatientDto;
 import com.hisbackend.domain.dto.UserDto;
-import com.hisbackend.domain.entity.Patient;
 import com.hisbackend.domain.entity.User;
 import org.springframework.stereotype.Component;
 
